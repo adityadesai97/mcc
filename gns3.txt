@@ -1,0 +1,45 @@
+R1(config)#interface fa0/0
+R1(config-if)#ip address 192.168.0.2 255.255.255.0
+R1(config-if)#no shutdown 
+
+R1(config)#router bgp 64520 
+R1(config-router)#neighbor 192.168.0.1 remote-as 64520
+
+
+
+BORDER_1(config)#interface fastEthernet 0/0
+BORDER_1(config-if)#ip address 10.0.0.1 255.255.255.0
+BORDER_1(config-if)#no shutdown 
+BORDER_1(config-if)#interface fastethernet 0/1
+BORDER_1(config-if)#ip address 192.168.0.1 255.255.255.0
+BORDER_1(config-if)#no shutdown 
+
+BORDER_1(config)#router bgp 64520
+BORDER_1(config-router)#neighbor 192.168.0.2 remote-as 64520
+BORDER_1(config-router)#neighbor 10.0.0.2 remote-as 64530
+BORDER_1(config-router)#network 192.168.0.0 mask 255.255.255.0
+BORDER_1(config-router)#neighbor 192.168.0.2 next-hop-self
+
+
+
+BORDER_2(config)#interface fastEthernet 0/0
+BORDER_2(config-if)#ip address 10.0.0.2 255.255.255.0
+BORDER_2(config-if)#no shutdown
+BORDER_2(config-if)#interface fa0/1
+BORDER_2(config-if)#ip address 192.168.100.1 255.255.255.0
+BORDER_2(config-if)#no shutdown
+
+BORDER_2(config)#router bgp 64530
+BORDER_2(config-router)#neighbor 10.0.0.1 remote-as 64520
+BORDER_2(config-router)#neighbor 192.168.100.2 remote-as 64530
+BORDER_2(config-router)#network 192.168.100.0 mask 255.255.255.0
+BORDER_2(config-router)#neighbor 192.168.100.2 next-hop-self
+
+
+
+R2(config)#interface fastEthernet 0/0
+R2(config-if)#ip address 192.168.100.2 255.255.255.0
+R2(config-if)#no shutdown
+
+R2(config)#router bgp 64530
+R2(config-router)#neighbor 192.168.100.1 remote-as 64530

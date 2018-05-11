@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM/DTM WML 1.2//EN" "http://www.wapform.org/DTD/wml12.dtd">
+<wml>
+	<card id="home" title="IS PAL">
+		<p>Enter a string to check if it's a palindrome: 
+			<input name="str"/>
+			
+			<do type="accept" label="Check">
+				<go href="checkpal.wmls#ispal('$(str)')"/>
+			</do>
+		</p>
+	</card>
+	<card id="ans">
+		<p>The given string is $result</p>
+	</card>
+</wml>

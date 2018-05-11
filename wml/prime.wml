@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM/DTM WML 1.2//EN" "http://www.wapform.org/DTD/wml12.dtd">
+<wml>
+	<card id="heading" title="Is Prime">
+		<p>
+			<input format="*N" name="num"></input>
+			<do type="accept" label="Check">
+				<go href="checkprime.wmls#isprime('$num')"/>
+			</do>
+		</p>
+	</card>
+	<card id="ans">
+		<p>
+			The number is $result
+		</p>	
+	</card>
+</wml>	

@@ -1,0 +1,16 @@
+extern function isoccur(str,character){
+	var i=0;
+	var count=0;
+
+	var n = String.length(str);
+
+	for(i=0;i<n;i++)
+	{
+		if(String.charAt(str,i)==character)
+			count=count+1;
+	}	
+
+	WMLBrowser.setVar('len',n);
+	WMLBrowser.setVar('count',count);
+	WMLBrowser.go('#ans');
+}

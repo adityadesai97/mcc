@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTM WML 1.2//EN" "html://www.wapform.org/DTD/wml12.dtd">
+
+<wml>
+	<card id="home" title=Simple Calculator">
+		<table columns="2" align="CC">
+			<tr>
+				<td><p>Enter 1st Number:</p></td>
+				<td><p><input format="*N" name="num1"/></p></td>
+			</tr>
+			<tr>	
+				<td><p>Enter 2nd Number:</p></td>
+				<td><p><input format="*N" name="num2"/></p></td>
+			</tr>
+
+			<tr>
+				<td><p>Select operation:</p></td>
+				<td>
+					<select name="op">
+						<option value="+">+</option>
+						<option value="-">-</option>	
+						<option value="*">*</option>	
+						<option value="/">/</option>	
+					</select>	
+				</td>
+			</tr>
+		<table>
+
+		<do type="accept" label="Calculate">
+			<go href="cal.wmls#cal_result('$num1','$num2','$op')"/>
+		</do>
+	</card>
+
+	<card id="ans">
+		<p>$num1 $op $num2 = $result</p>
+	</card>
+</wml>

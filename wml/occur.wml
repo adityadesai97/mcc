@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTM WML 1.2//EN" "http://www.wapform.org/DTD/wml12.dtd">
+
+<wml>
+	<card id="home" title="Character Occurence">
+		<p>
+			Enter a String: 
+			<input name="str"/>
+		</p>
+		<p>
+			Enter a Character: 
+			<input name="char"/>
+		</p>
+		<do type="accept" label="Check">
+			<go href="checkoccur.wmls#isoccur('$str','$char')">
+		</do>
+	</card>
+
+	<card id="ans">
+		<p>Length of '$str': $len</p>
+		<p>Occurence of '$char' in '$str': $count</p>
+	</card>	
+</wml>

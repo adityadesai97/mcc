@@ -1,0 +1,20 @@
+extern function cal_result(num1,num2,op)
+{
+	var n1 = Lang.parseInt(num1);
+	var n2 = Lang.parseInt(num2);
+	var res;
+	if(op=='+'){
+		res = n1+n2;
+	}
+	else if(op=="-"){
+		res=n1-n2;
+	}
+	else if(op=="*"){
+		res=n1*n2;
+	}else {
+		res=n1/n2;
+	}
+
+	WMLBrowser.setVar('result',res);
+	WMLBrowser.go('#ans');
+	}

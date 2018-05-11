@@ -1,0 +1,28 @@
+extern function ispal(str)
+{
+	var i=0;
+	var x = str;	
+	var isPal = true;
+
+	var n = String.length(x);
+
+	for(i=0;i<n/2;i++)
+	{
+		if(String.charAt(x,i) != String.charAt(x,n-i-1))
+		{
+			isPal = false;
+			
+		}
+	}
+
+	if(isPal)
+	{
+		WMLBrowser.setVar('result','palindrome');
+	}
+	else
+	{
+		WMLBrowser.setVar('result','not palindrome');
+	}
+
+	WMLBrowser.go("#ans");	
+}

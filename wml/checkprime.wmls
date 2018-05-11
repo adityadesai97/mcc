@@ -1,0 +1,23 @@
+extern function isprime(num)
+{
+	var res = 0;
+	var n = Lang.parseInt(num);
+	var i = 0;
+	for(i=2;i<=n/2;i++)
+	{
+		if(n%i==0)
+		{
+			res = 1;
+			break;
+		}
+	}
+
+	if(res)
+	{
+		WMLBrowser.setVar('result','not prime');
+	}
+	else{
+		WMLBrowser.setVar('result','prime');
+	}
+	WMLBrowser.go("#ans");
+}
